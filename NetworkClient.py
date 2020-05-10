@@ -6,14 +6,14 @@ import socket
 mysocket=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Now connecting to my own system on port 5555
-mysocket.connect(('localhost', 5555))
+mysocket.connect(('localhost', 30100))
 
 # Set msg to be a byte string
 msg=b"hi, sending data over a socket \n"
 
 # attempt to send the message over the socket
 try:
-    mysocket.endall(msg)
+    mysocket.sendall(msg)
 except mysocket.errno as e:
       print("Socket error", e)
 finally:

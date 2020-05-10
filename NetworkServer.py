@@ -9,7 +9,7 @@ mysocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 mysocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
 # Binds service to port 5555
-mysocket.bind(('', 5555))
+mysocket.bind(('', 30100))
 
 # listens on the socket
 mysocket.listen(0)
@@ -18,7 +18,7 @@ mysocket.listen(0)
 c, addr = mysocket.accept()
 data = c.recv(512)
 
-# if there is data print out where it came from, the IP address and the data itself
+# if there is data print where it come from, the IP address and the data itself
 if data:
     print("connection from: ", addr[0], ":", data)
 
